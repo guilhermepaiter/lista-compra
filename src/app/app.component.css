@@ -1,0 +1,20 @@
+.center-hor{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.layout-table,
+.layout-table th,
+.layout-table td {
+    border-style: solid;
+    border-color:#645ac0;
+    border-width: 1px;
+}
+
+.header-table-gray{
+    background-color: rgba(0, 4, 255, 0.562);
+}
+
+.text-center{
+    text-align: center;
+}
