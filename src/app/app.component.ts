@@ -9,18 +9,28 @@ import { environment } from '../environments/environment';
 export class AppComponent {
   title = "Lista de Compras";
   ambiente = environment.ambiente;
+
   mercadorias = [
     {
       descricao:"Arroz",
-      quantidade:1
+      quantidade:1,
+      id:1
     },
     {
       descricao:"Feijão",
-      quantidade:5
+      quantidade:5,
+      id:2
     },
     {
       descricao:"Óleo",
-      quantidade:2
+      quantidade:2,
+      id:3
+    },
+    {
+      descricao:"doce",
+      quantidade:12,
+      id:4
     }
-  ]
+  ];
+
 }

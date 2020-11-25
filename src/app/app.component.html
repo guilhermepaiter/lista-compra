@@ -6,6 +6,9 @@
         <thead>
             <tr class="header-table-gray">
                 <th>
+                    ID
+                </th>
+                <th>
                     nome mercadoria
                 </th>
                 <th>           
@@ -14,14 +17,20 @@
             </tr>     
         </thead>
         <tbody>
-            <tr class="text-center" *ngFor="let mercadoria of mercadorias">
-                  <td>
-                      {{mercadoria.descricao}}         
-                  </td>             
-                  <td>
-                      {{mercadoria.quantidade}}
-                  </td>               
-            </tr>
+            <tr class="box text-center" *ngFor="let mercadoria of mercadorias;
+             let i=index; let par=even; odd as impar"
+             [ngClass]="{par:par,impar:impar}"
+             >
+                    <td>
+                        {{mercadoria.id}}   
+                    </td>             
+                    <td>
+                        {{mercadoria.descricao}}   
+                    </td>             
+                    <td>
+                        {{mercadoria.quantidade}}
+                    </td>               
+             </tr>
         </tbody> 
-     </table> 
+     </table>
 </div>
