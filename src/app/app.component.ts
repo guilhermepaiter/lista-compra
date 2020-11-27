@@ -31,7 +31,7 @@ export class AppComponent {
     },
     {
       id:4,
-      descricao:"doce",
+      descricao:"Doce",
       quantidadeEstoque: 5,
       quantidadeMinima: 5
     }

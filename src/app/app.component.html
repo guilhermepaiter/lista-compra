@@ -9,13 +9,13 @@
                     ID
                 </th>
                 <th>
-                    nome mercadoria
+                    Nome mercadoria
                 </th>
                 <th>           
                     Quantidade em estoque
                 </th>
 				<th>
-                    quantidade minima
+                    Quantidade minima
                 </th>
 				<th>
 					Precisa comprar
@@ -40,9 +40,10 @@
 						{{mercadoria.quantidadeMinima}}
 					</td>
 					<td>
-						<span *ngIf="mercadoria.quantidadeEstoque >= mercadoria.quantidadeMinima; else precisaComprar">não</span>
+						<span *ngIf="mercadoria.quantidadeEstoque >= mercadoria.quantidadeMinima;
+                            then naoPrecisaComprar; else precisaComprar"></span>
 						<ng-template #precisaComprar>Sim</ng-template>
-						<ng-template #naoprecisaComprar>>Não<</ng-template>
+						<ng-template #naoPrecisaComprar>Não</ng-template>
 					</td>
 	            </tr>  
         </tbody> 
