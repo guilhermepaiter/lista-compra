@@ -12,24 +12,28 @@ export class AppComponent {
 
   mercadorias = [
     {
+      id:1,
       descricao:"Arroz",
-      quantidade:1,
-      id:1
+      quantidadeEstoque:2,
+      quantidadeMinima:4
     },
     {
+      id:2,
       descricao:"Feijão",
-      quantidade:5,
-      id:2
+      quantidadeEstoque: 5,
+      quantidadeMinima: 3
     },
     {
+      id:3,
       descricao:"Óleo",
-      quantidade:2,
-      id:3
+      quantidadeEstoque: 2,
+      quantidadeMinima: 2
     },
     {
+      id:4,
       descricao:"doce",
-      quantidade:12,
-      id:4
+      quantidadeEstoque: 5,
+      quantidadeMinima: 5
     }
   ];
 

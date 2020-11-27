@@ -12,25 +12,39 @@
                     nome mercadoria
                 </th>
                 <th>           
-                    Quantidade
+                    Quantidade em estoque
                 </th>
-            </tr>     
+				<th>
+                    quantidade minima
+                </th>
+				<th>
+					Precisa comprar
+				</th>
+			</tr>     
         </thead>
         <tbody>
             <tr class="box text-center" *ngFor="let mercadoria of mercadorias;
              let i=index; let par=even; odd as impar"
-             [ngClass]="{par:par,impar:impar}"
-             >
-                    <td>
+             [ngClass]="{par:par,impar:impar}">
+            
+                	<td>
                         {{mercadoria.id}}   
-                    </td>             
+                	</td>             
                     <td>
                         {{mercadoria.descricao}}   
                     </td>             
                     <td>
-                        {{mercadoria.quantidade}}
-                    </td>               
-             </tr>
+                        {{mercadoria.quantidadeEstoque}}
+                    </td>
+                    <td>
+						{{mercadoria.quantidadeMinima}}
+					</td>
+					<td>
+						<span *ngIf="mercadoria.quantidadeEstoque >= mercadoria.quantidadeMinima; else precisaComprar">não</span>
+						<ng-template #precisaComprar>Sim</ng-template>
+						<ng-template #naoprecisaComprar>>Não<</ng-template>
+					</td>
+	            </tr>  
         </tbody> 
      </table>
 </div>
