@@ -25,7 +25,8 @@
         <tbody>
             <tr class="box text-center" *ngFor="let mercadoria of mercadorias;
              let i=index; let par=even; odd as impar"
-             [ngClass]="{par:par,impar:impar}">
+             [ngClass]="{par:par,impar:impar}" [ngSwitch]="true"
+             >
             
                 	<td>
                         {{mercadoria.id}}   
@@ -40,10 +41,12 @@
 						{{mercadoria.quantidadeMinima}}
 					</td>
 					<td>
-						<span *ngIf="mercadoria.quantidadeEstoque >= mercadoria.quantidadeMinima;
-                            then naoPrecisaComprar; else precisaComprar"></span>
-						<ng-template #precisaComprar>Sim</ng-template>
-						<ng-template #naoPrecisaComprar>Não</ng-template>
+                        <span *ngSwitchCase="mercadoria.quantidadeEstoque >
+                        mercadoria.quantidadeMinima">Não</span>
+                        <span *ngSwitchCase="mercadoria.quantidadeEstoque <
+                        mercadoria.quantidadeMinima">Sim</span>
+                        <span *ngSwitchCase="mercadoria.quantidadeEstoque ==
+                        mercadoria.quantidadeMinima">Fique atento</span>
 					</td>
 	            </tr>  
         </tbody> 

@@ -7,7 +7,9 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = "Lista de Compras";
+  private readonly theBestProperty = "Lista de Compras";
+
+  title = this.theBestProperty;
   ambiente = environment.ambiente;
 
   mercadorias = [
@@ -27,10 +29,10 @@ export class AppComponent {
       id:3,
       descricao:"Óleo",
       quantidadeEstoque: 2,
-      quantidadeMinima: 2
+      quantidadeMinima: 4
     },
     {
-      id:4,
+      id: 4,
       descricao:"Doce",
       quantidadeEstoque: 5,
       quantidadeMinima: 5
