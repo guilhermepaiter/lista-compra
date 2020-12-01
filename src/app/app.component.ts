@@ -28,14 +28,14 @@ export class AppComponent {
     {
       id:3,
       descricao:"Óleo",
-      quantidadeEstoque: 2,
-      quantidadeMinima: 4
+      quantidadeEstoque: 4,
+      quantidadeMinima: 3
     },
     {
       id: 4,
       descricao:"Doce",
       quantidadeEstoque: 5,
-      quantidadeMinima: 5
+      quantidadeMinima: 4
     }
   ];
 

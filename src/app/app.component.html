@@ -24,7 +24,7 @@
         </thead>
         <tbody>
             <tr class="box text-center" *ngFor="let mercadoria of mercadorias;
-             let i=index; let par=even; odd as impar"
+             let i=index; let par=even; let impar = odd"
              [ngClass]="{par:par,impar:impar}" [ngSwitch]="true"
              >
             
@@ -42,7 +42,7 @@
 					</td>
 					<td>
                         <span *ngSwitchCase="mercadoria.quantidadeEstoque >
-                        mercadoria.quantidadeMinima">Não</span>
+                            mercadoria.quantidadeMinima">Não</span>
                         <span *ngSwitchCase="mercadoria.quantidadeEstoque <
                         mercadoria.quantidadeMinima">Sim</span>
                         <span *ngSwitchCase="mercadoria.quantidadeEstoque ==
