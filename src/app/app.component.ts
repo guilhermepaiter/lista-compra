@@ -34,9 +34,16 @@ export class AppComponent {
     {
       id: 4,
       descricao:"Doce",
-      quantidadeEstoque: 5,
-      quantidadeMinima: 4
+      quantidadeEstoque: 2,
+      quantidadeMinima: 20
     }
-  ];
+  ]
+
+  novaMercadoria = {
+    id:5,
+    descricao: "Pipoca",
+    quantidadeEstoque: 1,
+    quantidadeMinima: 5
+  }
 
 }
