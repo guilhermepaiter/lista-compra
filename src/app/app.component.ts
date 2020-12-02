@@ -45,5 +45,13 @@ export class AppComponent {
     quantidadeEstoque: 1,
     quantidadeMinima: 5
   }
-
+  
+  adicionarMercadoria() {
+    this.mercadorias.push({
+      id:this.novaMercadoria.id,
+      descricao:this.novaMercadoria.descricao,
+      quantidadeEstoque:this.novaMercadoria.quantidadeEstoque,
+      quantidadeMinima:this.novaMercadoria.quantidadeMinima
+    })
+  }
 }
