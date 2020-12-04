@@ -55,19 +55,40 @@
 <div class="center-hor container-input">
     ID:
     <input type="text" name="id" class="width-100" 
-    [(ngModel)]="novaMercadoria.id">
+    [(ngModel)]="novaMercadoria.id" required minlength="2" #validId="ngModel">
+    <div *ngIf="!validId.valid">
+        <span *ngIf="validId.errors.required">Campo obrigatório</span>
+        <span *ngIf="validId.errors.minlength">Necessário pelo menos 2 caracteres</span>
+    </div>
     
     Descrição:
     <input type="text" name="descricao" class="width-100" 
-    [(ngModel)]="novaMercadoria.descricao">
+    [(ngModel)]="novaMercadoria.descricao"
+     required minlength="2" #validDescricao="ngModel">
+     <div *ngIf="!validdescricao.valid">
+        <span *ngIf="validdescricao.errors.required">Campo obrigatório</span>
+        <span *ngIf="validdescricao.errors.minlength">Necessário pelo menos 2 caracteres</span>
+    </div>
     
     Quantidade em Estoque:
     <input type="text" name="quantidadeEstoque" class="width-100" 
-    [(ngModel)]="novaMercadoria.quantidadeEstoque">
+    [(ngModel)]="novaMercadoria.quantidadeEstoque" 
+    required minlength="2" #validQuantidadeEstoque="ngModel">
+    <div *ngIf="!validquantidadeEstoque.valid">
+       <span *ngIf="validquantidadeEstoque.errors.required">Campo obrigatório</span>
+       <span *ngIf="validquantidadeEstoque.errors.minlength">Necessário pelo menos 2 caracteres</span>
+  </div>
     
     Quantidade mínima:
     <input type="text" name="quantidadeMinima" class="width-100" 
-    [(ngModel)]="novaMercadoria.quantidadeMinima">
+    [(ngModel)]="novaMercadoria.quantidadeMinima" 
+    required minlength="2" #validQuantidadeMinima="ngModel">
+    <div *ngIf="!validquantidadeMinima.valid">
+       <span *ngIf="validquantidadeMinima.errors.required">Campo obrigatório</span>
+       <span *ngIf="validquantidadeMinima.errors.minlength">Necessário pelo menos 2 caracteres</span>
+   </div>
 
-    <button (click)="adicionarMercadoria()">Adicionar mercadoria</button>
+    <button [disabled]="!validId.valid || !validDescricao.valid || !validquantidadeEstoque.valid 
+    || !validquantidadeMinima.valid"
+    (click)="adicionarMercadoria()">Adicionar mercadoria</button>
 </div>
