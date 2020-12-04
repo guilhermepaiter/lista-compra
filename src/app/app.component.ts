@@ -7,6 +7,7 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   private readonly theBestProperty = "Lista de Compras";
 
   title = this.theBestProperty;
