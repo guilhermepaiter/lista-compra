@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  ambiente: 'Desenvolvimento'
+  ambiente: 'Desenvolvimento',
+  titulo: 'Lista de Compras'
 };
 
 /*

@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { environment } from '../environments/environment';
+import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { LISTA_MERCADORIAS } from './base-mercadorias';
+import { MercadoriaService } from './mercadoria.service';
+import { Mercadoria } from './mercadoria';
 
 @Component({
   selector: 'app-root',
@@ -7,52 +10,38 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
-  private readonly theBestProperty = "Lista de Compras";
+
+  private readonly theBestProperty = environment.titulo;
 
   title = this.theBestProperty;
   ambiente = environment.ambiente;
 
-  mercadorias = [
-    {
-      id:1,
-      descricao:"Arroz",
-      quantidadeEstoque:2,
-      quantidadeMinima:4
-    },
-    {
-      id:2,
-      descricao:"Feijão",
-      quantidadeEstoque: 5,
-      quantidadeMinima: 3
-    },
-    {
-      id:3,
-      descricao:"Óleo",
-      quantidadeEstoque: 4,
-      quantidadeMinima: 3
-    },
-    {
-      id: 4,
-      descricao:"Doce",
-      quantidadeEstoque: 2,
-      quantidadeMinima: 20
-    }
-  ]
+  mercadorias: Mercadoria[];
 
   novaMercadoria = {
-    id:5,
-    descricao: "Pipoca",
+    id: 5,
+    descricao: 'Pipoca',
     quantidadeEstoque: 1,
     quantidadeMinima: 5
-  }
-  
+  };
+
+  // tslint:disable-next-line: typedef
   adicionarMercadoria() {
     this.mercadorias.push({
-      id:this.novaMercadoria.id,
-      descricao:this.novaMercadoria.descricao,
-      quantidadeEstoque:this.novaMercadoria.quantidadeEstoque,
-      quantidadeMinima:this.novaMercadoria.quantidadeMinima
-    })
+      id: this.novaMercadoria.id,
+      descricao: this.novaMercadoria.descricao,
+      quantidadeEstoque: this.novaMercadoria.quantidadeEstoque,
+      quantidadeMinima: this.novaMercadoria.quantidadeMinima
+    });
+  }
+
+  constructor(private mercadoriaService: MercadoriaService){}
+
+  ngOnInit() {
+    this.getMercadorias();
+  }
+
+  getMercadorias(): void{
+    this.mercadorias = this.mercadoriaService.getMercadorias();
   }
 }
