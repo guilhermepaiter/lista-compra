@@ -1,0 +1,55 @@
+<div style="text-align: center">
+    <h1>{{title}}</h1>  
+</div>
+
+<div>
+    <table class="center-hor layout-table" width="500px"> 
+        <thead>
+            <tr class="header-table-gray">
+                <th>
+                    ID
+                </th>
+                <th>
+                    Nome mercadoria
+                </th>
+                <th>           
+                    Quantidade em estoque
+                </th>
+				<th>
+                    Quantidade minima
+                </th>
+				<th>
+					Precisa comprar
+				</th>
+			</tr>     
+        </thead>
+        <tbody>
+            <tr class="box text-center" *ngFor="let mercadoria of mercadorias;
+             let i=index; let par=even; let impar = odd"
+             [ngClass]="{par:par,impar:impar}" [ngSwitch]="true"
+             >
+            
+                	<td>
+                        {{mercadoria.id}}   
+                	</td>             
+                    <td>
+                        {{mercadoria.descricao}}   
+                    </td>             
+                    <td>
+                        {{mercadoria.quantidadeEstoque}}
+                    </td>
+                    <td>
+						{{mercadoria.quantidadeMinima}}
+					</td>
+					<td>
+                        <span *ngSwitchCase="mercadoria.quantidadeEstoque >
+                            mercadoria.quantidadeMinima">Não</span>
+                        <span *ngSwitchCase="mercadoria.quantidadeEstoque <
+                        mercadoria.quantidadeMinima">Sim</span>
+                        <span *ngSwitchCase="mercadoria.quantidadeEstoque ==
+                        mercadoria.quantidadeMinima">Fique atento</span>
+					</td>
+	            </tr>  
+        </tbody> 
+     </table>
+</div>

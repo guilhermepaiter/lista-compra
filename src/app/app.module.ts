@@ -3,14 +3,21 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/Forms';
 
 import { AppComponent } from './app.component';
+import { EditMercadoriaComponent } from './editmercadoria/editmercadoria.component';
+import { MercadoriasComponent } from './mercadorias/mercadorias.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditMercadoriaComponent,
+    MercadoriasComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

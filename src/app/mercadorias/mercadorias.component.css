@@ -1,0 +1,37 @@
+.center-hor{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.layout-table,
+.layout-table th,
+.layout-table td {
+    border-style: solid;
+    border-color:hsla(246, 84%, 52%, 0.87);
+    border-width: 1px;
+}
+
+.header-table-gray{
+    background-color: rgba(152, 21, 228, 0.856);
+}
+
+.text-center{
+    text-align: center;
+}
+
+.par {
+    background-color:#2dc3c975
+}
+
+.impar {
+    background-color: #14c59f
+}
+
+.width-100{
+    width: 100%;
+}
+
+.container-input{
+    width: 500px;
+    margin-top: 20px;
+}
