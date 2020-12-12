@@ -9,7 +9,7 @@ import { EditMercadoriaComponent } from './editmercadoria/editmercadoria.compone
 const routes : Routes = [
   { path: '', redirectTo:'/mercadorias', pathMatch: 'full'},
   { path: 'mercadorias', component: MercadoriasComponent },
-  { path: 'mercadorias/edit', component: EditMercadoriaComponent}
+  { path: 'mercadorias/edit/:id', component: EditMercadoriaComponent}
 ];
 
 @NgModule({

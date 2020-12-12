@@ -3,18 +3,6 @@
     margin-left: auto;
 }
 
-.layout-table,
-.layout-table th,
-.layout-table td {
-    border-style: solid;
-    border-color:hsla(246, 84%, 52%, 0.87);
-    border-width: 1px;
-}
-
-.header-table-gray{
-    background-color: rgba(152, 21, 228, 0.856);
-}
-
 .text-center{
     text-align: center;
 }

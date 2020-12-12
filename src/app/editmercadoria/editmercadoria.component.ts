@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MercadoriaService } from '../mercadoria.service';
 import { Mercadoria } from '../mercadoria';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-editmercadoria',
@@ -8,28 +10,23 @@ import { Mercadoria } from '../mercadoria';
 })
 export class EditMercadoriaComponent implements OnInit {
 
-  mercadoria = {
-    id: null,
-    descricao: null,
-    quantidadeEstoque: null,
-    quantidadeMinima: null
-  };
+  mercadoria : Mercadoria;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private mercadoriaService: MercadoriaService) { }
 
   ngOnInit(): void {
-
+    this.getMercadoria();
   }
 
-  adicionarMercadoria() {
-    /*
-      this.mercadorias.push({
-      id: this.novaMercadoria.id,
-      descricao: this.novaMercadoria.descricao,
-      quantidadeEstoque: this.novaMercadoria.quantidadeEstoque,
-      quantidadeMinima: this.novaMercadoria.quantidadeMinima
-    });
-    */
+  getMercadoria(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.mercadoria = this.mercadoriaService.getMercadoria(id);
+  }
+
+  salvarMercadoria() {
+    
   }
 
 }
