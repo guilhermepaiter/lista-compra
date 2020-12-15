@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { EditMercadoriaComponent } from './editmercadoria/editmercadoria.component';
 import { MercadoriasComponent } from './mercadorias/mercadorias.component';
 import { AppRoutingModule } from './app-routing.module';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     EditMercadoriaComponent,
     MercadoriasComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
