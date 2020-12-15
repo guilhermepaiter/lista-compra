@@ -9,9 +9,11 @@ import { User } from '../user'
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+
   title = 'user-httpClient';
   url = 'http://s3.amazonaws.com/Utilidades/cursoApi/users.json';
-  users:User[];
+
+  users: User[];
 
   constructor(private httpClient: HttpClient) { }
 
@@ -21,7 +23,8 @@ export class UserComponent implements OnInit {
 
   getUsers(){
     this.httpClient.get<User[]>(this.url).subscribe(data => {
-      console.log(data);
+      this.users = data
     });
   }
+
 }

@@ -16,6 +16,7 @@ export class MercadoriasComponent implements OnInit {
     private readonly theBestProperty = environment.titulo;
   
     title = this.theBestProperty;
+    
     ambiente = environment.ambiente;
   
     mercadorias: Mercadoria[];
