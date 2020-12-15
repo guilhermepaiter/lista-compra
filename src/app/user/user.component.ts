@@ -9,10 +9,19 @@ import { User } from '../user'
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  title = 'user-httpClient';
+  url = 'http://s3.amazonaws.com/Utilidades/cursoApi/users.json';
+  users:User[];
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+    this.getUsers();
   }
 
+  getUsers(){
+    this.httpClient.get<User[]>(this.url).subscribe(data => {
+      console.log(data);
+    });
+  }
 }
