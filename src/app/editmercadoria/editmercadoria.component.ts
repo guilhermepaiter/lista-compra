@@ -22,7 +22,7 @@ export class EditMercadoriaComponent implements OnInit {
 
   getMercadoria(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.mercadoria = this.mercadoriaService.getMercadoria(id);
+    this.mercadoria = this.mercadoriaService.getMercadoria(Number(id));
   }
 
   salvarMercadoria() {

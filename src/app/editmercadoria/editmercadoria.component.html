@@ -37,4 +37,5 @@
     <button [disabled]="!validId.valid || !validdescricao.valid || !validquantidadeEstoque.valid 
     || !validquantidadeMinima.valid"
     (click)="salvarMercadoria()">Salvar mercadoria</button>
+    <button [routerLink]="['/mercadorias']">Cancelar</button>
 </div>
