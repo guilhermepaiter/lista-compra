@@ -1,7 +1,7 @@
 <div class="center-hor container-input">
     ID:
     <input type="text" name="id" class="width-100" 
-    [(ngModel)]="mercadoria.id" required minlength="2" #validId="ngModel">
+    [(ngModel)]="mercadoria.id" required minlength="1" #validId="ngModel">
     <div *ngIf="!validId.valid">
         <span *ngIf="validId.errors.required">Campo obrigatório</span>
         <span *ngIf="validId.errors.minlength">Necessário pelo menos 1 caracteres</span>
@@ -19,7 +19,7 @@
     Quantidade em Estoque:
     <input type="text" name="quantidadeEstoque" class="width-100" 
     [(ngModel)]="mercadoria.quantidadeEstoque" 
-    required minlength="2" #validquantidadeEstoque="ngModel">
+    required minlength="1" #validquantidadeEstoque="ngModel">
     <div *ngIf="!validquantidadeEstoque.valid">
        <span *ngIf="validquantidadeEstoque.errors.required">Campo obrigatório</span>
        <span *ngIf="validquantidadeEstoque.errors.minlength">Necessário pelo menos 1 caracteres</span>
@@ -28,7 +28,7 @@
     Quantidade mínima:
     <input type="text" name="quantidadeMinima" class="width-100" 
     [(ngModel)]="mercadoria.quantidadeMinima" 
-    required minlength="2" #validquantidadeMinima="ngModel">
+    required minlength="1" #validquantidadeMinima="ngModel">
     <div *ngIf="!validquantidadeMinima.valid">
        <span *ngIf="validquantidadeMinima.errors.required">Campo obrigatório</span>
        <span *ngIf="validquantidadeMinima.errors.minlength">Necessário pelo menos 1 caracteres</span>
